@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>
+    h1{
+        color: white;
+        font-size: 50px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    h3{
+        color:white;
+    }
+    h4{
+      color: white;
+      font-weight: bolder;
+      font-size: 15px;
+      ;
+    }
+</style>
+    <title>Visualization</title>
+</head>
+<body background="./static/background_vis.jpg"
+ style=" background-size:1500px 3000px;">
+    <center><h1>Data Visualization</h1></center>
+            <br>
+        <center><h1>Categorical Feature</h1></center>
+      <center>
+        <h3>GENDER</h3>
+        <img src="./static/gender.png" alt="" style="height: 400px;width: 500px;">
+        <img src="./static/gender_exit.png"  alt="" style="height: 400px;width: 500px;">
+        <h4>There is no gender gap. It is pretty well balanced but there are more female leaving the bank than male</h4>
+      </center>  
+      <center>
+        <h3>GEOGRAPHY</h3>
+        <img src="./static/geography.png"  alt="" style="height: 400px;width: 500px;">
+        <img src="./static/geography_exit.png"  alt="" style="height: 400px;width: 500px;">
+        <h4>50% costumers from France, 25 % Germany , 25 % Spain<br>
+          Germany's costumers churn mostly<br>
+          There is a problem in germany. Almost half of the clients in Germany end up leaving
+        </h4>
+      </center> 
+      <center>
+        <h3>ISACTIVEMEMBER</h3>
+        <img src="./static/Isactivemember.png"  alt="" style="height: 400px;width: 500px;">
+        <img src="./static/isactive_exit.png"  alt="" style="height: 400px;width: 500px;">
+        <h4>Number of active and non-active costumers almost same. Not a very good sign!<br>
+          Inactive member churn more</h4>
+      </center> 
+      <center>
+        <h3>HASCREDITCARD</h3>
+        <img src="./static/hascrcard.png"  alt="" style="height: 400px;width: 500px;">
+        <img src="./static/hascrcard_exit.png"  alt="" style="height: 400px;width: 500px;">
+        <h4>70% of bank costumers have credit cards</h4>
+      </center> 
+      <center>
+        <h3>NUMBER OF PRODUCTS</h3>
+        <img src="./static/numofproducts.png"  alt="" style="height: 400px;width: 500px;">
+        <img src="./static/numofproducts_exit.png"  alt="" style="height: 400px;width: 500px;">
+        <h4>50% of costumers only use 1 bank's product<br>
+          Costumer who use 3 or 4 of bank's product churn more.
+        </h4>
+      </center> 
+      <center>
+        <h3>EXITED</h3>
+        <img src="./static/exited.png"  alt="" style="height: 400px;width: 500px;">
+        <h4>Imbalanced data for target.Exited costumers only 20,37%</h4>
+      </center> 
+
+
+        <center><h1>Numerical Feature</h1></center>
+        <br>
+        <center>
+            <img src="./static/numerical.png"  alt="" style="height: 350px;width: 1400px;">
+          </center> 
+          <center>
+            <h3>AGE</h3>
+            <img src="./static/age_exit.png"  alt="" style="height: 400px;width: 500px;">
+            <h4>40-50 years old costumer churn more<br>
+              Young costumers retain more than old costumer</h4>
+          </center>
+          <center>
+            <h3>BALANCE</h3>
+            <img src="./static/balance_exit.png"  alt="" style="height: 400px;width: 500px;">
+            <h4>People with low empty balance will tend to churn<br>
+              Some of churn costumer have  balance amount. It is between 100.000 - 150.000</h4>
+          </center>
+          <center>
+            <h3>SALARY</h3>
+            <img src="./static/salary_exit.png"  alt="" style="height: 400px;width: 500px;">
+            <h4>No significant difference, it's make sense because we've checked that estimated salary has lowest correlation with target</h4>
+          </center>
+          <center>
+            <h3>CREDIT SCORE</h3>
+            <img src="./static/creditscore_exit.png"  alt="" style="height: 400px;width: 500px;">
+            <h4>Costumers with credit scores around 600-700 ( bad to fair category ) tend to churn<br>
+              Customers with highest credit score points (850) churn the most. It's not good for bank because they are low risk customers</h4>
+          </center>
+          <center>
+            <h3>TENURE</h3>
+            <img src="./static/tenure_exit.png"  alt="" style="height: 400px;width: 500px;">
+            <h4>Customers who have been with the bank for one and nine month are the most churned.</h4>
+          </center>
+          <br>
+
+        <center><h1>Another Visualization</h1></center>
+        <center>
+            <h3>TENURE CATEGORY</h3>
+            <img src="./static/tenure_cat.png"  alt="" style="height: 400px;width: 500px;">
+            <h4>Costumers who have been with the bank around 3-5 years (medium tenure) churn more.</h4>
+          </center>
+          <center>
+            <h3>AGE CATEGORY</h3>
+            <img src="./static/age_cat.png"  alt="" style="height: 400px;width: 500px;">
+            <h4>Old customer churn more</h4>
+          </center>
+          <center>
+            <h3>AGE AND ACTIVE MEMBER</h3>
+            <img src="./static/age_active.png"  alt="" style="height: 400px;width: 800px;">
+            <h4>40-60 years old churn customer come from inactive members mostly.</h4>
+          </center>
+          <center>
+            <h3>CREDIT SCORE CATEGORY</h3>
+            <img src="./static/creditscore_cat.png"  alt="" style="height: 400px;width: 500px;">
+            <h4>It's make a sense that costumer with Bad & Very Bad Credit Score churn mostly</h4>
+          </center>
+          <center>
+            <h3>CREDIT SCORE AND ACTIVE MEMBER</h3>
+            <img src="./static/credit_active.png"  alt="" style="height: 400px;width: 800px;">
+            <h4>Inactive member based on all credit score categories churn more than active member</h4>
+          </center>
+          <center>
+            <h3>BALANCE CATEGORY</h3>
+            <img src="./static/balance_cat.png"  alt="" style="height: 400px;width: 500px;">
+            <h4>Costumer with high balance churn mostly. It's a serious problem because bank may loss some money for loan service.</h4>
+          </center>
+          <center>
+            <h3>BALANCE AND ACTIVE MEMBER</h3>
+            <img src="./static/balance_active.png"  alt="" style="height: 400px;width: 800px;">
+            <h4>Customers with high balance who churn mostly is not an active member.</h4>
+          </center>
+
+
+
+</body>
+</html>

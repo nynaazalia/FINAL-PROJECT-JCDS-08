@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Prediction</title>
+<style>
+    h1{
+        color: white;
+        font-weight : bold;
+        font-size: 60px;
+        font-family: serif;
+    }
+    h5{
+        color: whitesmoke;
+    }
+    i{
+        color:whitesmoke;
+    }
+</style>
+    <title>Prediction</title>
+</head>
+<body background="./static/standard_predict.jpg">
+    <center><h1>Standard Chartered Customer Churn Engine</h1></center>
+    <br><br>
+    <center>
+        <form method="POST" action="http://127.0.0.1:5000/result">
+        <h5>Country:</h5>
+            <select aria-label="Country" style="width: 200px; height: 40px;color:white;"class="btn-success" name="Country">
+                <option value="France"  >France</option>
+                <option value="Germany">Germany</option>
+                <option value="Spain">Spain</option>
+             </select>
+                </center>
+                    <br>
+                    <center>
+                        <h5>Gender:</h5>
+                        <select aria-label="Gender" style="width: 200px;height: 40px; color:white" class="btn-info" name="Gender">
+                           <option value="male">Male</option>
+                           <option value="female">Female</option>
+                        </select>
+                    <br>
+                    <br>
+                        <h5>Age:</h5>
+                        <input type="number" placeholder="Minimum: 18" style="width: 200px;height: 40px;color:white;" class="btn-success" name="age"/>
+                    <br>
+                    <br>
+                        <h5>Balance</h5>
+                        <input type="number" placeholder="USD" style="width: 200px;height: 40px;color:white;"class="btn-info" name="balance">
+                    <br>
+                    <br>
+                        <h5>Credit Score:</h5>
+                        <input type="number" placeholder="350-850" style="width: 200px;height: 40px;color:white;"class="btn-success" name="credit" />
+                    <br>
+                    <br>
+                        <h5>Tenure:</h5>
+                        <input type="number" placeholder="0-10" style="width: 200px;height: 40px;color:white;"class="btn-info" name="tenure" />
+                    <br>
+                    <br>
+                        <h5>Number of Products:</h5>
+                        <input type="number" placeholder="1-4" style="width: 200px;height: 40px;color:white;"class="btn-success" name="prod"/>
+                    <br>
+                    <br>
+                       <h5>Active Member:</h5>
+                        <select aria-label="Active Member" style="width: 200px;height: 40px;color: white;"class="btn-info" name="Active Member">
+                           <option value="Yes">Yes</option>
+                           <option value="No">No</option>
+                        </select>
+                    <br>
+                    <br>
+                        <h5>Estimated Salary</h5>
+                        <input type="number" placeholder="USD" style="width: 200px;height: 40px;color:white;"class="btn-success" name="salary">
+                        <br>
+                    <br>
+                    <br>
+                        <button class="btn btn-info" type="submit">PREDICT</button>
+                    </center>
+        </form>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Result</title>
+<style>
+    .container{
+        color: blue;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+</style>
+<body style='background-image: url(./static/bg_result.jpg);background-repeat: no-repeat; background-size: 1500px;'>
+<center>
+    <br>
+    <br>
+    <br>
+    <h1 style="color:white; background-color: green; font-size: 70px;">CHURN PREDICTION RESULT</h1>
+    <br>
+    <br>
+    <div class="container">
+        Country: {{Country}}<br>Gender: {{Gender}}<br>Age: {{age}}<br>Num of Products: {{product}}<br>Tenure:  {{tenure}}<br>Credit Score: {{credit}}<br>Active Member: {{active}}<br>Balance: {{balance}}<br>Salary:{{salary}}<br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <label for="result" style="color: green;background-color: white; font-size: xx-large; font-weight: bolder; outline-style: dashed;">Customer {{proba}}% {{result}}</label>
+    </div>
+    <br>
+    <div>
+        <label for="solution" style="background-color: white;color:green; font-weight: bolder;">{{solution}}</label>
+    </div>
+    <a href="/" target="_self" >
+        <button class="btn btn-success" >
+            BACK TO HOME
+        </button>    
+      </a>
+</center>
+</body>
+</html>
