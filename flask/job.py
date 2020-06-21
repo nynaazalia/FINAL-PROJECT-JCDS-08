@@ -7,12 +7,16 @@ from sklearn.preprocessing import RobustScaler
 import joblib
 
 
-data = pd.read_csv('BankChurn_Clean_Scale.csv')
-# print(data.head())
+df = pd.read_csv('BankChurn_Clean.csv')
 
-X= data[['CreditScore', 'Age', 'Tenure', 'Balance', 'NumOfProducts', 'IsActiveMember', 'EstimatedSalary','France', 'Spain', 'Germany', 'GenderMale']]
+scaler_feature = ['Age','Balance','CreditScore','EstimatedSalary']
+scaler = RobustScaler()
+df2 = pd.DataFrame(scaler.fit_transform(df[scaler_feature]), columns=scaler_feature)
+df2 = pd.concat([df2, df.drop(columns=scaler_feature)], axis=1)
+
+X = df2[['CreditScore', 'Age', 'Balance', 'EstimatedSalary','Tenure', 'NumOfProducts', 'IsActiveMember','France', 'Spain', 'Germany', 'GenderMale']]
 # print(X)
-Y= data['Exited']
+Y = df2['Exited']
 # print(Y)
 
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.1, shuffle=False)
@@ -24,13 +28,6 @@ X_train_smote, y_train_smote = sm.fit_sample(X_train, y_train.ravel())
 
 model= KNeighborsClassifier()
 model.fit(X_train_smote, y_train_smote.ravel())
-
-scaler = RobustScaler()
-scaler.fit_transform(data[['CreditScore']])
-scaler.fit_transform(data[['Age']])
-scaler.fit_transform(data[['Balance']])
-scaler.fit_transform(data[['EstimatedSalary']])
-scaler.fit_transform(data[['Tenure']])
 
 joblib.dump(model, 'modelJoblib')
 joblib.dump(scaler, 'scaleJoblib')

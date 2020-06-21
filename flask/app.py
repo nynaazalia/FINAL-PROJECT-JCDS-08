@@ -30,8 +30,8 @@ def clustering():
 def result():
     if request.method == "POST":
         input = request.form
+        age= int(input['age'])
         numofproduct = int(input["prod"])
-        age = int(input["age"])
         tenure = int(input["tenure"])
         creditS = int(input["credit"])
         salary = float(input["salary"])
@@ -69,9 +69,23 @@ def result():
         else:
             activemember = 0
             inputAct = "No"
-        datainput = [[creditS, age, tenure, balance, numofproduct, activemember, salary,france, spain, germany, male]]
-        pred = model.predict(datainput)[0]
-        proba = model.predict_proba(datainput)[0]
+
+        scaler = scale.transform([[int(input['credit']),
+                        float(input['age']),
+                           float(input['balance']),
+                           float(input['salary']),
+                           ]])
+        data_input = scaler.ravel().tolist()
+        data_input.extend([int(input["tenure"]),
+                            int(input["prod"]),
+                            activemember,
+                            france,
+                            spain,
+                            germany,
+                            male
+                            ])
+        pred = model.predict(np.array([data_input]))[0]
+        proba = model.predict_proba(np.array([data_input]))[0]
         if pred == 0:
             probability = round((proba[0]*100), 1)
             result = "stay in Standard Chartered Bank"
@@ -86,6 +100,7 @@ def result():
 
 if __name__ == '__main__':
     model = joblib.load('modelJoblib')
+    scale = joblib.load('scaleJoblib')
     app.run(debug=True)
 
 
